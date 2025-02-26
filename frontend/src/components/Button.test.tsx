@@ -15,5 +15,9 @@ describe("Button Component", () => {
 
     fireEvent.click(screen.getByText(/click me/i));
     expect(handleClick).toHaveBeenCalledTimes(1);
+    expect(handleClick).toHaveBeenCalledWith(1000);
+
+    fireEvent.click(screen.getByText(/click me/i));
+    expect(handleClick).toHaveBeenCalledTimes(2);
   });
 });
